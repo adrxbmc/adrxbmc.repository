@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-# Copyright 2014 Anonymous
+# Copyright 2015 AdrXbmc
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ def traducao(texto):
 def CATEGORIES():
 	if selfAddon.getSetting('vista') == '0':
 		addDir('AdrXbmc (Abelhas)','-',110,artfolder + 'ab.png', pasta=False)
-		addDir('Filmes HD','-',111,artfolder + 'ab.png', pasta=False)
+		addDir('Filmes HD','-',111,artfolder + 'icon_filmes.png', pasta=False)
 		
 		if selfAddon.getSetting('pass') == "false": password()
 	

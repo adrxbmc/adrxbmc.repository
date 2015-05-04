@@ -1,2 +1,3 @@
-﻿[B]Version 0.0.2 (04/05/2015):[/B]
-Add New Images;
+﻿[B]Version 0.1.0 (04/05/2015):[/B]
+- Adicionadas novas Images;
+- Adicionadas novas Categorias

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-# 2014 - Anonymous
+# 2015 - AdrXbmc
 
 import urllib,urllib2,xbmcgui,re,xbmcaddon
 from t0mm0.common.net import Net

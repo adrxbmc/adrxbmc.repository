@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="adrxbmc.repository" name="AdrXbmc repository" version="0.0.2" provider-name="AdrXbmc">
+<addon id="adrxbmc.repository" name="AdrXbmc repository" version="0.0.5" provider-name="AdrXbmc">
 	<extension point="xbmc.addon.repository" name="Demonstration Add-on Repository">
 		<info compressed="false">http://raw.github.com/adrxbmc/adrxbmc.repository/master/addons.xml</info>
 		<checksum>http://raw.github.com/adrxbmc/adrxbmc.repository/master/addons.xml.md5</checksum>
@@ -14,7 +14,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.adrxbmctv" name="AdrXbmc TV" version="0.0.2" provider-name="AdrXbmc">
+<addon id="plugin.video.adrxbmctv" name="AdrXbmc TV" version="0.1.0" provider-name="AdrXbmc">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.t0mm0.common"/>
@@ -29,7 +29,7 @@
   <extension point="xbmc.addon.metadata">
     <language>en</language>
     <platform>all</platform>
-    <summary lang="en">AdrXbmc no Abelhas</summary>
+    <summary lang="en">AdrXbmc on Abelhas</summary>
     <summary lang="pt">Abelhas do AdrXbmc</summary>
     <description lang="en">Excluvise content for AdrXbmc's clients.</description>
     <description lang="pt">Conteudo exclusivo para clientes AdrXbmc</description>

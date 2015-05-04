@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-# 2014 - Anonymous
+# 2015 - AdrXbmc
 
 import xbmc
 import xbmcgui

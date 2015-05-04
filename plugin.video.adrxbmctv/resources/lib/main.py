@@ -34,8 +34,6 @@ if xbmc.getCondVisibility('system.platform.windows'): pastaperfil = pastaperfil.
 mensagemprogresso = xbmcgui.DialogProgress()
 entra_canais = selfAddon.getSetting('entra_canais')
 
-nnm_list = 'http://nnm-list.ru/f/niu3uo4w'
-
 def traducao(texto):
 	return selfAddon.getLocalizedString(texto).encode('utf-8')
 
@@ -43,8 +41,22 @@ def traducao(texto):
 
 def CATEGORIES():
 	if selfAddon.getSetting('vista') == '0':
-		addDir('AdrXbmc (Abelhas)','-',110,artfolder + 'ab.png', pasta=False)
-		addDir('Filmes HD','-',111,artfolder + 'icon_filmes.png', pasta=False)
+		addDir('AdrXbmc (Abelhas)','-',100,artfolder + 'logo.png', pasta=False)
+		addDir('Novelas','-',170,artfolder + 'novelas.png', pasta=False)
+		addDir('Teatro Tv','-',180,artfolder + 'teatrotv.png', pasta=False)
+		addDir('Filmes','-',110,artfolder + 'filmes.png', pasta=False)
+		addDir('Filmes HD','-',111,artfolder + 'filmeshd.png', pasta=False)
+		addDir('Filmes UHD','-',112,artfolder + 'filmesuhd.png', pasta=False)
+		addDir('Filmes Pt','-',113,artfolder + 'filmespt.png', pasta=False)
+		addDir('Filmes Pl','-',114,artfolder + 'filmespl.png', pasta=False)
+		addDir('Filmes 3D','-',115,artfolder + 'filmes3d.png', pasta=False)
+		addDir('Series','-',120,artfolder + 'series.png', pasta=False)
+		addDir('Series Completas','-',121,artfolder + 'seriescompletas.png', pasta=False)
+		addDir('Documentarios','-',130,artfolder + 'documentarios.png', pasta=False)
+		addDir('Fitness','-',140,artfolder + 'fitness.png', pasta=False)
+		addDir('Humor','-',150,artfolder + 'humor.png', pasta=False)
+		addDir('Concertos','-',160,artfolder + 'concertos.png', pasta=False)
+		
 		
 		if selfAddon.getSetting('pass') == "false": password()
 	
@@ -59,7 +71,17 @@ def abelhas():
 	url = urllib.quote_plus('http://abelhas.pt/adrxbmc')
 	name = 'Ir para uma Abelha'
 	xbmc.executebuiltin('XBMC.Container.Update(plugin://%s?mode=3&url=%s&name=%s)' % (addon, url,name))
-		
+	
+def filmes():
+	addon = 'plugin.video.abelhas'
+	if not xbmc.getCondVisibility('System.HasAddon('+addon+')'):
+		xbmcgui.Dialog().ok(traducao(2010), traducao(2077))
+		return
+	
+	url = urllib.quote_plus('http://abelhas.pt/AdrXbmc/Filmes+*26+S*c3*a9ries/Filmes/SD')
+	name = 'Ir para uma Abelha'
+	xbmc.executebuiltin('XBMC.Container.Update(plugin://%s?mode=3&url=%s&name=%s)' % (addon, url,name))	
+
 def filmeshd():
 	addon = 'plugin.video.abelhas'
 	if not xbmc.getCondVisibility('System.HasAddon('+addon+')'):
@@ -70,6 +92,126 @@ def filmeshd():
 	name = 'Ir para uma Abelha'
 	xbmc.executebuiltin('XBMC.Container.Update(plugin://%s?mode=3&url=%s&name=%s)' % (addon, url,name))	
 	
+def filmesuhd():
+	addon = 'plugin.video.abelhas'
+	if not xbmc.getCondVisibility('System.HasAddon('+addon+')'):
+		xbmcgui.Dialog().ok(traducao(2010), traducao(2077))
+		return
+	
+	url = urllib.quote_plus('http://abelhas.pt/AdrXbmc/Filmes+*26+S*c3*a9ries/Filmes/UHD+*5b1080p*5d')
+	name = 'Ir para uma Abelha'
+	xbmc.executebuiltin('XBMC.Container.Update(plugin://%s?mode=3&url=%s&name=%s)' % (addon, url,name))	
+	
+def filmespt():
+	addon = 'plugin.video.abelhas'
+	if not xbmc.getCondVisibility('System.HasAddon('+addon+')'):
+		xbmcgui.Dialog().ok(traducao(2010), traducao(2077))
+		return
+	
+	url = urllib.quote_plus('http://abelhas.pt/AdrXbmc/Filmes+*26+S*c3*a9ries/Filmes/Pt*2c+Made+in')
+	name = 'Ir para uma Abelha'
+	xbmc.executebuiltin('XBMC.Container.Update(plugin://%s?mode=3&url=%s&name=%s)' % (addon, url,name))	
+	
+def filmespl():
+	addon = 'plugin.video.abelhas'
+	if not xbmc.getCondVisibility('System.HasAddon('+addon+')'):
+		xbmcgui.Dialog().ok(traducao(2010), traducao(2077))
+		return
+	
+	url = urllib.quote_plus('http://abelhas.pt/AdrXbmc/*e2*97*84Filmy+w+j*c4*99zyku+polskim*e2*96*ba+*e2*94*80*e2*94*80*e2*94*80*e2*94*80*e2*94*80*e2*94*80*e2*94*80*e2*94*80*e2*94*80*e2*94*80*e2*94*80*e2*94*80*e2*94*80*e2*94*80*e2*94*80*e2*94*80*e2*94*80*e2*94*80')
+	name = 'Ir para uma Abelha'
+	xbmc.executebuiltin('XBMC.Container.Update(plugin://%s?mode=3&url=%s&name=%s)' % (addon, url,name))		
+	
+def filmes3d():
+	addon = 'plugin.video.abelhas'
+	if not xbmc.getCondVisibility('System.HasAddon('+addon+')'):
+		xbmcgui.Dialog().ok(traducao(2010), traducao(2077))
+		return
+	
+	url = urllib.quote_plus('http://abelhas.pt/AdrXbmc/Filmes+*26+S*c3*a9ries/Filmes/3D')
+	name = 'Ir para uma Abelha'
+	xbmc.executebuiltin('XBMC.Container.Update(plugin://%s?mode=3&url=%s&name=%s)' % (addon, url,name))			
+	
+def series():
+	addon = 'plugin.video.abelhas'
+	if not xbmc.getCondVisibility('System.HasAddon('+addon+')'):
+		xbmcgui.Dialog().ok(traducao(2010), traducao(2077))
+		return
+	
+	url = urllib.quote_plus('http://abelhas.pt/AdrXbmc/Filmes+*26+S*c3*a9ries/S*c3*a9ries+(Em+Exibi*c3*a7*c3*a3o)')
+	name = 'Ir para uma Abelha'
+	xbmc.executebuiltin('XBMC.Container.Update(plugin://%s?mode=3&url=%s&name=%s)' % (addon, url,name))			
+	
+def seriescompletas():
+	addon = 'plugin.video.abelhas'
+	if not xbmc.getCondVisibility('System.HasAddon('+addon+')'):
+		xbmcgui.Dialog().ok(traducao(2010), traducao(2077))
+		return
+	
+	url = urllib.quote_plus('http://abelhas.pt/AdrXbmc/Filmes+*26+S*c3*a9ries/S*c3*a9ries+Completas')
+	name = 'Ir para uma Abelha'
+	xbmc.executebuiltin('XBMC.Container.Update(plugin://%s?mode=3&url=%s&name=%s)' % (addon, url,name))		
+	
+def documentarios():
+	addon = 'plugin.video.abelhas'
+	if not xbmc.getCondVisibility('System.HasAddon('+addon+')'):
+		xbmcgui.Dialog().ok(traducao(2010), traducao(2077))
+		return
+	
+	url = urllib.quote_plus('http://abelhas.pt/AdrXbmc/Filmes+*26+S*c3*a9ries/Document*c3*a1rios')
+	name = 'Ir para uma Abelha'
+	xbmc.executebuiltin('XBMC.Container.Update(plugin://%s?mode=3&url=%s&name=%s)' % (addon, url,name))
+
+def fitness():
+	addon = 'plugin.video.abelhas'
+	if not xbmc.getCondVisibility('System.HasAddon('+addon+')'):
+		xbmcgui.Dialog().ok(traducao(2010), traducao(2077))
+		return
+	
+	url = urllib.quote_plus('http://abelhas.pt/AdrXbmc/Fitness')
+	name = 'Ir para uma Abelha'
+	xbmc.executebuiltin('XBMC.Container.Update(plugin://%s?mode=3&url=%s&name=%s)' % (addon, url,name))
+
+def humor():
+	addon = 'plugin.video.abelhas'
+	if not xbmc.getCondVisibility('System.HasAddon('+addon+')'):
+		xbmcgui.Dialog().ok(traducao(2010), traducao(2077))
+		return
+	
+	url = urllib.quote_plus('http://abelhas.pt/AdrXbmc/Humor+*ef*bc*bc(*5e-*5e)*ef*bc*8f')
+	name = 'Ir para uma Abelha'
+	xbmc.executebuiltin('XBMC.Container.Update(plugin://%s?mode=3&url=%s&name=%s)' % (addon, url,name))
+
+def concertos():
+	addon = 'plugin.video.abelhas'
+	if not xbmc.getCondVisibility('System.HasAddon('+addon+')'):
+		xbmcgui.Dialog().ok(traducao(2010), traducao(2077))
+		return
+	
+	url = urllib.quote_plus('http://abelhas.pt/AdrXbmc/M*c3*basica+*e2*99*ac+*e2*99*aa+*e2*99*ab+*e2*99*a9/*e2*98*aaoncertos')
+	name = 'Ir para uma Abelha'
+	xbmc.executebuiltin('XBMC.Container.Update(plugin://%s?mode=3&url=%s&name=%s)' % (addon, url,name))
+
+def novelas():
+	addon = 'plugin.video.abelhas'
+	if not xbmc.getCondVisibility('System.HasAddon('+addon+')'):
+		xbmcgui.Dialog().ok(traducao(2010), traducao(2077))
+		return
+	
+	url = urllib.quote_plus('http://abelhas.pt/AdrXbmc/Novelas')
+	name = 'Ir para uma Abelha'
+	xbmc.executebuiltin('XBMC.Container.Update(plugin://%s?mode=3&url=%s&name=%s)' % (addon, url,name))
+
+def teatrotv():
+	addon = 'plugin.video.abelhas'
+	if not xbmc.getCondVisibility('System.HasAddon('+addon+')'):
+		xbmcgui.Dialog().ok(traducao(2010), traducao(2077))
+		return
+	
+	url = urllib.quote_plus('http://abelhas.pt/AdrXbmc/Teatro+Tv')
+	name = 'Ir para uma Abelha'
+	xbmc.executebuiltin('XBMC.Container.Update(plugin://%s?mode=3&url=%s&name=%s)' % (addon, url,name))
+
 def _ch(name):
 	if selfAddon.getSetting(name) == "true":
 		return True
@@ -261,7 +403,21 @@ if mode==None or url==None or len(url)<1:
 	if entra_canais == "false": CATEGORIES()
 	else: canais()
 elif mode==0: CATEGORIES()
-elif mode==110: abelhas()
+elif mode==100: abelhas()
+elif mode==110: filmes()
 elif mode==111: filmeshd()
+elif mode==112: filmesuhd()
+elif mode==113: filmespt()
+elif mode==114: filmespl()
+elif mode==115: filmes3d()
+elif mode==120: series()
+elif mode==121: seriescompletas()
+elif mode==130: documentarios()
+elif mode==140: fitness()
+elif mode==150: humor()
+elif mode==160: concertos()
+elif mode==170: novelas()
+elif mode==180: teatrotv()
+
 
 xbmcplugin.endOfDirectory(int(sys.argv[1]))

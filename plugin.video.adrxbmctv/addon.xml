@@ -6,7 +6,7 @@
 	<import addon="script.module.urlresolver" version="2.4.0"/> 
 	<import addon="script.module.simplejson"/>
 	<import addon="script.module.requests"/>
-	<import addon="plugin.image.adrxbmcreader"/> 
+	<import addon="plugin.image.pdfreader"/> 
   </requires>
   <extension point="xbmc.python.pluginsource" library="resources/lib/main.py">
     <provides>video</provides>

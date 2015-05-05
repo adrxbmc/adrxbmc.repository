@@ -7,8 +7,8 @@
 		<datadir zip="true">http://raw.github.com/adrxbmc/adrxbmc.repository/master/repo/</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>AdrXbmc Addon</summary>
-		<description>AdrXbmc Description</description>
+		<summary>AdrXbmc Addons</summary>
+		<description>Os meus addons</description>
 		<disclaimer></disclaimer>
 		<platform>all</platform>
 	</extension>
@@ -32,6 +32,23 @@
     <platform>all</platform>
     <summary lang="en">Experimental Google Music audio plugin</summary>
     <description lang="en">Plugin that lets you play music from your Google Music account.</description>
+  </extension>
+</addon>
+
+<addon id="plugin.image.pdfreader" name="PDF Reader" version="0.1.0" provider-name="AdrXbmc">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>image</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <language>en</language>
+    <platform>all</platform>
+    <summary lang="en">PDF Reader</summary>
+    <description lang="en">Read your pdf's.</description>
+    <platform>all</platform>
+	<license>GPL 2.0</license>
   </extension>
 </addon>
 

@@ -19,7 +19,7 @@
 How to use PDF Reader - Add these lines to your py
 
 try:
-	addon_pdf = xbmc.translatePath('special://home/addons/plugin.image.pdfreader/resources/lib')
+	addon_pdf = xbmc.translatePath('special://home/addons/plugin.image.adrxbmcreader/resources/lib')
 	sys.path.append(addon_pdf)
 	from pdf import pdf		# For pdf
 	pdf = pdf()				# For pdf
@@ -64,7 +64,7 @@ h = HTMLParser.HTMLParser()
 
 versao = '1.0.2'
 
-addon_id = 'plugin.image.pdfreader'
+addon_id = 'plugin.image.adrxbmcreader'
 selfAddon = xbmcaddon.Addon(id=addon_id)
 addonfolder = selfAddon.getAddonInfo('path')
 artfolder = addonfolder + '/resources/img/'
@@ -95,7 +95,7 @@ def CATEGORIES():
 def versao_disponivel():
 	try:
 		codigo_fonte=abrir_url('http://pastebin.com/raw.php?i=FfZqrLp9')
-		match=re.compile('<addon id="plugin.image.pdfreader" name="PDF Reader" version="(.+?)"').findall(codigo_fonte)[0]
+		match=re.compile('<addon id="plugin.image.adrxbmcreader" name="PDF Reader" version="(.+?)"').findall(codigo_fonte)[0]
 	except:
 		match=traducao(2005)
 	return match

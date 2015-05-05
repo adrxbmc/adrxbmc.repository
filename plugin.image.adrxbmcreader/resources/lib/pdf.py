@@ -6,7 +6,7 @@
 How to use PDF Reader - Add these lines to your py
 
 try:
-	addon_pdf = xbmc.translatePath('special://home/addons/plugin.image.pdfreader/resources/lib')
+	addon_pdf = xbmc.translatePath('special://home/addons/plugin.image.adrxbmcreader/resources/lib')
 	sys.path.append(addon_pdf)
 	from pdf import pdf		# For pdf
 	pdf = pdf()				# For pdf
@@ -14,7 +14,7 @@ try:
 	cbx = cbx()				# For cbr and cbz
 except:
 	dialog = xbmcgui.Dialog()
-	dialog.ok("Erro!","Não foi encontrado o add-on PDF Reader.","Por favor, instale-o.")
+	dialog.ok("Erro!","Não foi encontrado o add-on AdrPDF Reader.","Por favor, instale-o.")
 	xbmc.executebuiltin('XBMC.ActivateWindow(Home)')
 	
 ###################################
@@ -43,7 +43,7 @@ import urllib,urllib2,re,xbmcplugin,xbmcgui,xbmc,xbmcaddon,HTMLParser,os,sys,tim
 
 h = HTMLParser.HTMLParser()
 
-addon_id = 'plugin.image.pdfreader'
+addon_id = 'plugin.image.adrxbmcreader'
 selfAddon = xbmcaddon.Addon(id=addon_id)
 addonfolder = selfAddon.getAddonInfo('path')
 artfolder = addonfolder + '/resources/img/'
@@ -71,7 +71,7 @@ class pdf:
 	def pdf_read(self,name,url,videoaddon=False):	# Read and play pdf
 		if videoaddon: 
 			xbmc.executebuiltin("ActivateWindow(busydialog)")
-			xbmc.executebuiltin('XBMC.RunAddon(plugin.image.pdfreader)')
+			xbmc.executebuiltin('XBMC.RunAddon(plugin.image.adrxbmcreader)')
 			xbmc.sleep(2000)
 			xbmc.executebuiltin("Dialog.Close(busydialog)")
 		name = re.sub('[^a-z A-Z0-9\n\.]', '', name)
@@ -85,7 +85,7 @@ class pdf:
 			else:
 				if not self._download(url): return
 				pdf_path = os.path.join(temp,'temp.pdf')
-		xbmc.executebuiltin('XBMC.Container.Update(%s?mode=1&url=%s&name=%s)' % ('plugin://plugin.image.pdfreader/', urllib.quote_plus(pdf_path),name))
+		xbmc.executebuiltin('XBMC.Container.Update(%s?mode=1&url=%s&name=%s)' % ('plugin://plugin.image.adrxbmcreader/', urllib.quote_plus(pdf_path),name))
 
 	def _play(self,name,url):
 		images_name=[]
@@ -285,12 +285,12 @@ class cbx:
 	def cbx_read(self,name,url,videoaddon=False):
 		if videoaddon: 
 			xbmc.executebuiltin("ActivateWindow(busydialog)")
-			xbmc.executebuiltin('XBMC.RunAddon(plugin.image.pdfreader)')
+			xbmc.executebuiltin('XBMC.RunAddon(plugin.image.adrxbmcreader)')
 			xbmc.sleep(2000)
 			xbmc.executebuiltin("Dialog.Close(busydialog)")
 		self.clean_temp()
 		xbmc.executebuiltin('XBMC.Extract('+url+','+temp+')')
-		xbmc.executebuiltin('XBMC.Container.Update(%s?mode=5&url=%s&name=%s)' % ('plugin://plugin.image.pdfreader/', urllib.quote_plus(url),name))
+		xbmc.executebuiltin('XBMC.Container.Update(%s?mode=5&url=%s&name=%s)' % ('plugin://plugin.image.adrxbmcreader/', urllib.quote_plus(url),name))
 	
 	def _play(self,name,url,folder=temp, page=1):
 		for f in os.listdir(folder):

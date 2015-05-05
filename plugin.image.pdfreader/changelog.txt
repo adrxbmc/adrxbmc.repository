@@ -1,0 +1,5 @@
+﻿Versão 2.0.0:
+Fix na leitura de imagens através de addons de video
+
+Versão 1.0.0:
+Primeira versão

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+  <string id="30001">Adicionar novo Website</string>
+  <string id="30002">Remove Website</string>
+  <string id="30003">Titulo</string>
+  <string id="30004">URL</string>
+  <string id="30005">Chrome nao foi encontrado</string>
+  <string id="30006">Editar definicoes do Website</string>
+  <string id="30007">Thumbnail</string>
+  <string id="30009">Parar a reprodução XBMC?</string>
+  <string id="30010">Usar caminho personalizado Chrome/script?</string>
+  <string id="30011">Chrome/script path</string>
+  <string id="30012">Utilize perfil próprio de usuário (pode levar algum tempo na primeira inicialização)</string>
+  <string id="30016">Use o modo de quiosque?</string>
+</strings>

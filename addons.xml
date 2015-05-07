@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="adrxbmc.repository" name="AdrXbmc repository" version="0.0.5" provider-name="AdrXbmc">
-	<extension point="xbmc.addon.repository" name="Demonstration Add-on Repository">
+<addon id="adrxbmc.repository" name="AdrXbmc repository" version="0.6.9" provider-name="AdrXbmc">
+	<extension point="xbmc.addon.repository" name="AdrXbmc Repository">
 		<info compressed="false">http://raw.github.com/adrxbmc/adrxbmc.repository/master/addons.xml</info>
 		<checksum>http://raw.github.com/adrxbmc/adrxbmc.repository/master/addons.xml.md5</checksum>
 		<datadir zip="true">http://raw.github.com/adrxbmc/adrxbmc.repository/master/repo/</datadir>
@@ -95,5 +95,28 @@
 	<disclaimer lang="pt">Os proprietarios deste addon nao hospedam ou distribuem o conteudo exibido nem tem qualquer afiliacao com os provedores do conteudo.</disclaimer>
     <platform>all</platform>
   </extension>
+</addon>
+
+<addon id="screensaver.video" name="VideoScreensaver" version="2.0.0" provider-name="AdrXbmc">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+		<import addon="script.module.simplejson" version="3.3.0"/>
+	</requires>
+	<extension point="xbmc.ui.screensaver" library="default.py"/>
+  	<extension point="xbmc.python.script" library="screensaver.py" />
+	<extension point="xbmc.service" library="service.py" start="login">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Screensaver that plays a video file</summary>
+		<summary lang="pt">Protetor de ecrÃ£ que reproduz um ficheiro de vÃ­deo</summary>
+		<description lang="en">Plays a video when the screensaver starts, this can be a custom video or one of the built in videos</description>
+		<description lang="pt">Reproduz um vÃ­deo quando o protetor de ecrÃ£ inicia, este pode ser um vÃ­deo personalizado ou um dos vÃ­deos embutidos</description>
+		<language></language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum>http://forum.kodi.tv/showthread.php?tid=210943</forum>
+		<source>http://robwebset.googlecode.com/svn/trunk/screensaver.video/</source>
+	</extension>
 </addon>
 </addons>

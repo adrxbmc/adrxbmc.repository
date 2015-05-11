@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1121" type="dialog">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	
+	<include condition="!Skin.HasSetting(firstrun1.0)">AutoConfig</include>	
+	<include condition="!Skin.HasSetting(OldConfig1.0)">OldConfig</include>
+
+	<controls>
+		<include>CommonBackground</include>
+		<control type="image">
+			<left>0</left>
+			<top>100r</top>
+			<width>1280</width>
+			<height>100</height>
+			<texture colordiffuse="$INFO[Skin.String(T-Floor)]">floor.png</texture>
+			<include>VisibleFadeEffect</include>
+		</control>
+		<control type="image">
+			<description>Section header image</description>
+			<left>20</left>
+			<top>3</top>
+			<width>35</width>
+			<height>35</height>
+			<aspectratio>keep</aspectratio>
+			<texture>icon_system.png</texture>
+		</control>
+		<control type="grouplist">
+			<left>65</left>
+			<top>5</top>
+			<width>1000</width>
+			<height>30</height>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<itemgap>5</itemgap>
+			<control type="label">
+				<include>WindowTitleCommons</include>
+				<label>$LOCALIZE[20077]</label>
+			</control>
+			<control type="label">
+				<include>WindowTitleCommons</include>
+				<label>[COLOR=blue] - [/COLOR]$INFO[Container.FolderName]</label>
+				<visible>!IsEmpty(Container.FolderName)</visible>
+			</control>
+		</control>	
+		<control type="group">
+		
+			<left>90</left>
+			<top>30</top>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300"/>
+				<effect type="fade" start="0" end="100" time="300"/>
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300"/>
+				<effect type="fade" start="100" end="0" time="300"/>
+			</animation>
+			<control type="image">
+				<left>5</left>
+				<top>5</top>
+				<width>1090</width>
+				<height>630</height>
+				<texture colordiffuse="$INFO[Skin.String(T-ContentPanel)]" border="15">ContentPanel.png</texture>
+			</control>
+			<control type="image">
+				<left>5</left>
+				<top>625</top>
+				<width>1090</width>
+				<height>64</height>
+				<texture border="15">ContentPanelMirror.png</texture>
+			</control>
+			<control type="button">
+				<description>Close Window button</description>
+				<left>980</left>
+				<top>11</top>
+				<width>64</width>
+				<height>32</height>
+				<label>-</label>
+				<font>-</font>
+				<onclick>PreviousMenu</onclick>
+				<texturefocus>DialogCloseButton-focus.png</texturefocus>
+				<texturenofocus colordiffuse="$INFO[Skin.String(T-ContentPanel)]">DialogCloseButton.png</texturenofocus>
+				<onleft>1</onleft>
+				<onright>1</onright>
+				<onup>1</onup>
+				<ondown>1</ondown>
+				<visible>system.getbool(input.enablemouse)</visible>
+			</control>
+			<control type="image">
+				<description>LOGO</description>
+				<left>30</left>
+				<top>15</top>
+				<width>220</width>
+				<height>80</height>
+				<aspectratio>keep</aspectratio>
+				<texture>Influence_Logo.png</texture>
+			</control>
+
+			<control type="list" id="9000"> 	
+				<left>10</left>
+				<top>90</top>
+				<width>260</width>
+				<height>500</height>
+				<onleft>9020</onleft>
+				<onright>9020</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<pagecontrol>-</pagecontrol>
+				<scrolltime>300</scrolltime>
+				<itemlayout height="50" width="260">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>260</width>
+						<height>51</height>
+						<texture border="5">MenuItemNF.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>15</top>
+						<width>240</width>
+						<height>25</height>
+						<font>font24_title</font>
+						<textcolor>grey3</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="50" width="260">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>260</width>
+						<height>51</height>
+						<texture border="5">MenuItemFO.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>15</top>
+						<width>240</width>
+						<height>25</height>
+						<font>font24_title</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>Control.HasFocus(9000)</visible>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>15</top>
+						<width>240</width>
+						<height>25</height>
+						<font>font24_title</font>
+						<textcolor>grey3</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!Control.HasFocus(9000)</visible>
+					</control>					
+				</focusedlayout>
+				<content>
+					<include>WeatherMainMenu</include>
+					<include>PicturesMainMenu</include>
+					<include>RadioMainMenu</include>
+					<include>TVMainMenu</include>
+					<include>VideosMainMenu</include>
+					<include>MoviesMainMenu</include>
+					<include>TVShowsMainMenu</include>
+					<include>MusicMainMenu</include>
+					<include>ProgramsMainMenu</include>
+					<include>PlayDiscMainMenu</include>
+					<include>SettingsMainMenu</include>
+					<include>CustomMainMenuItem1</include>
+					<include>CustomMainMenuItem2</include>
+					<include>CustomMainMenuItem3</include>
+					<include>CustomMainMenuItem4</include>
+					<include>CustomMainMenuItem5</include>
+					<include>CustomMainMenuItem6</include>
+				</content>
+			</control>
+			<control type="image">
+				<left>268</left>
+				<top>10</top>
+				<width>790</width>
+				<height>618</height>
+				<texture border="5">black-back2.png</texture>
+			</control>
+			<control type="image">
+				<left>268</left>
+				<top>10</top>
+				<width>790</width>
+				<height>52</height>
+				<texture>dialogheader.png</texture>
+			</control>
+			<control type="label">
+				<description>header label</description>
+				<left>300</left>
+				<top>20</top>
+				<width>726</width>
+				<height>30</height>
+				<font>font16</font>
+				<label>50007</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="group" id="9020"> <!-- General Settings -->
+				<control type="grouplist" id="9001"> <!-- General Settings -->
+					<left>290</left>
+					<top>60</top>
+					<width>750</width>
+					<height>530</height>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>9001</onup>
+					<ondown>9030</ondown>		
+
+					<control type="radiobutton" id="100"> <!-- Enable/Disable Button-->
+						<description>Enable/Disable Button</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[305]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>							
+						<onfocus condition="IsEmpty(Container(9000).ListItem.Property(Disable))">ClearProperty(Influence.Disable,Home)</onfocus>
+						<onfocus condition="!IsEmpty(Container(9000).ListItem.Property(Disable))">SetProperty(Influence.Disable,True,home)</onfocus>
+						<onclick condition="IsEmpty(Container(9000).ListItem.Property(Disable))">SetProperty(Influence.Disable,True,home)</onclick>
+						<onclick condition="IsEmpty(Container(9000).ListItem.Property(Disable))">Skin.SetString($INFO[Container(9000).ListItem.Property(Item),,HomeItem.Disable],True)</onclick>
+						<onclick condition="!IsEmpty(Container(9000).ListItem.Property(Disable))">ClearProperty(Influence.Disable,Home)</onclick>
+						<onclick condition="!IsEmpty(Container(9000).ListItem.Property(Disable))">Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.Disable])</onclick>
+						<selected>[Control.HasFocus(90010) + IsEmpty(Window(home).Property(Influence.Disable))] | [!Control.HasFocus(90010) + IsEmpty(Container(9000).ListItem.Property(Disable))]</selected>
+						<enable>!IsEmpty(Container(9000).ListItem.Property(Path))</enable>
+					</control>
+					<control type="button" id="101"> <!-- Edit Label Button-->
+						<description>Edit Label Button</description>
+						<label>$LOCALIZE[13334]</label>
+						<label2>[COLOR=selected]$INFO[Container(9000).ListItem.Label][/COLOR]</label2>
+						<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(Item),,HomeItem.Label])</onclick>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+
+					</control>
+					<control type="button" id="102"> <!-- Background Button-->
+						<description>Background Button</description>
+						<label>50006</label>
+						<label2>[COLOR=selected]$INFO[Container(9000).ListItem.Property(BackGround)][/COLOR]</label2>
+						<onclick>Skin.SetImage($INFO[Container(9000).ListItem.Property(Item),,HomeItem.BackGround])</onclick>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>					
+					</control>
+					<control type="button" id="103"> <!-- Default select action Button-->
+						<description>Default select action Button</description>
+						<label>$LOCALIZE[22079]</label>
+						<label2>[COLOR=selected]$INFO[Container(9000).ListItem.Property(Path)][/COLOR]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;custom=True&amp;skinLabel=$INFO[Container(9000).ListItem.Property(Item),,HomeItem.Label]&amp;skinAction=$INFO[Container(9000).ListItem.Property(Item),,HomeItem.Path])</onclick>
+						<visible>System.HasAddon(script.skinshortcuts)</visible>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>							
+					</control>
+				
+					<control type="button" id="106"> <!-- Reset Button -->
+						<description>Reset Button</description>
+						<label>$LOCALIZE[10035]</label>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.Label])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.Path])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.MultiFanart])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.Icon])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.InfoLine])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.Widget])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.WidgetLabel])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.WidgetType])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.BGType])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.BackGround])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu1.Label])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu1.Path])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu2.Label])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu2.Path])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu3.Label])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu3.Path])</onclick>						
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu4.Label])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu4.Path])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu5.Label])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu5.Path])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu6.Label])</onclick>
+						<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu6.Path])</onclick>																		
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>							
+					</control>
+					<control type="image" id="107"> <!-- Separator -->
+						<description>Separator</description>
+						<width>750</width>
+						<height>26</height>
+						<texture>dialogheader.png</texture>
+					</control>
+<!--					
+					<control type="label">
+						<description>header label</description>
+						<top>10r</top>
+						<width>750</width>
+						<height>26</height>
+						<font>font10</font>
+						<label>CONFIGURATION DES SOUS-MENUS</label>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<shadowcolor>black</shadowcolor>
+					</control>					
+-->
+				</control>					
+					<control type="group" id="9030">
+					<left>290</left>
+					<top>300</top>
+					<width>750</width>
+					<height>530</height>
+						<control type="list" id="9035"> 	
+							<left>10</left>
+							<top>10</top>
+							<width>260</width>
+							<height>481</height>
+							<onleft>9000</onleft>
+							<onright>9036</onright>
+							<onup>9001</onup>
+							<ondown>9035</ondown>
+							<pagecontrol>-</pagecontrol>
+							<scrolltime>300</scrolltime>
+							<itemlayout height="40" width="200">
+								<control type="image">
+										<left>0</left>
+										<top>0</top>
+										<width>260</width>
+										<height>41</height>
+										<texture border="5">MenuItemNF.png</texture>
+								</control>
+								
+								<control type="label">
+									<width>200</width>
+									<height>35</height>
+									<font>font13</font>
+									<textcolor>grey</textcolor>
+									<selectedcolor>selected</selectedcolor>
+									<align>left</align>
+									<aligny>center</aligny>
+									<label>$INFO[ListItem.Label]</label>
+								</control>
+							</itemlayout>
+							<focusedlayout height="40" width="200">
+								<control type="image">
+									<left>0</left>
+									<top>0</top>
+									<width>260</width>
+									<height>41</height>
+									<texture border="5">MenuItemNF.png</texture>
+								</control>
+								
+								<control type="label">
+									<width>200</width>
+									<height>40</height>
+									<font>font13</font>
+									<textcolor>blue</textcolor>
+									<selectedcolor>selected</selectedcolor>
+									<textoffsetx>20</textoffsetx>
+									<align>left</align>
+									<aligny>center</aligny>
+									<label>$INFO[ListItem.Label]</label>
+									<visible>Control.HasFocus(9035)</visible>
+								</control>
+								<control type="label">
+									<width>200</width>
+									<height>40</height>
+									<font>font13</font>
+									<textcolor>grey</textcolor>
+									<selectedcolor>selected</selectedcolor>
+									<align>left</align>
+									<aligny>center</aligny>
+									<label>$INFO[ListItem.Label]</label>
+									<visible>!Control.HasFocus(9035)</visible>
+								</control>
+							</focusedlayout>
+							<content>
+
+								<item id="1">	
+									<label>$INFO[Container(9000).ListItem.Property(SubMenu1.Label)]</label>
+									<onclick>noop</onclick>
+								</item>
+								<item id="2">	
+									<label>$INFO[Container(9000).ListItem.Property(SubMenu2.Label)]</label>
+									<onclick>noop</onclick>
+								</item>
+								<item id="3">	
+									<label>$INFO[Container(9000).ListItem.Property(SubMenu3.Label)]</label>
+									<onclick>noop</onclick>
+								</item>
+								<item id="4">	
+									<label>$INFO[Container(9000).ListItem.Property(SubMenu4.Label)]</label>
+									<onclick>noop</onclick>
+								</item>						
+								<item id="5">	
+									<label>$INFO[Container(9000).ListItem.Property(SubMenu5.Label)]</label>
+									<onclick>noop</onclick>
+								</item>						
+								<item id="6">	
+									<label>$INFO[Container(9000).ListItem.Property(SubMenu6.Label)]</label>
+									<onclick>noop</onclick>
+								</item>	
+							</content>
+						</control>					
+						<control type="grouplist" id="9036"> <!-- General Settings -->
+							<description>control area</description>
+							<left>200</left>
+							<top>10</top>
+							<width>550</width>
+							<height>530</height>
+							<itemgap>-1</itemgap>
+							<pagecontrol>60</pagecontrol>
+							<onleft>9035</onleft>
+							<onright>60</onright>
+							<onup>9001</onup>
+							<ondown>9036</ondown>
+							<control type="radiobutton" id="9041"> <!-- Enable/Disable Button-->
+								<include>SubMenuCust_Enable</include>
+								<visible>Container(9035).Hasfocus(1)</visible>	
+								<onfocus condition="IsEmpty(Container(9000).ListItem.Property(SubMenu1.Disable))">ClearProperty(Influence.SubMenu1.Disable,Home)</onfocus>
+								<onfocus condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu1.Disable))">SetProperty(Influence.SubMenu1.Disable,True,home)</onfocus>
+								<onclick condition="IsEmpty(Container(9000).ListItem.Property(SubMenu1.Disable))">SetProperty(Influence.SubMenu1.Disable,True,home)</onclick>
+								<onclick condition="IsEmpty(Container(9000).ListItem.Property(SubMenu1.Disable))">Skin.SetString($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu1.Disable],True)</onclick>
+								<onclick condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu1.Disable))">ClearProperty(Influence.SubMenu1.Disable,Home)</onclick>
+								<onclick condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu1.Disable))">Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu1.Disable])</onclick>
+								<selected>[Control.HasFocus(90010) + IsEmpty(Window(home).Property(Influence.SubMenu1.Disable))] | [!Control.HasFocus(90010) + IsEmpty(Container(9000).ListItem.Property(SubMenu1.Disable))]</selected>
+								<enable>!IsEmpty(Container(9000).ListItem.Property(SubMenu1.Path))</enable>
+							</control>							
+							<control type="radiobutton" id="9042"> <!-- Enable/Disable Button-->
+								<include>SubMenuCust_Enable</include>
+								<visible>Container(9035).Hasfocus(2)</visible>	
+								<onfocus condition="IsEmpty(Container(9000).ListItem.Property(SubMenu2.Disable))">ClearProperty(Influence.SubMenu2.Disable,Home)</onfocus>
+								<onfocus condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu2.Disable))">SetProperty(Influence.SubMenu2.Disable,True,home)</onfocus>
+								<onclick condition="IsEmpty(Container(9000).ListItem.Property(SubMenu2.Disable))">SetProperty(Influence.SubMenu2.Disable,True,home)</onclick>
+								<onclick condition="IsEmpty(Container(9000).ListItem.Property(SubMenu2.Disable))">Skin.SetString($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu2.Disable],True)</onclick>
+								<onclick condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu2.Disable))">ClearProperty(Influence.SubMenu2.Disable,Home)</onclick>
+								<onclick condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu2.Disable))">Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu2.Disable])</onclick>
+								<selected>[Control.HasFocus(90010) + IsEmpty(Window(home).Property(Influence.SubMenu2.Disable))] | [!Control.HasFocus(90010) + IsEmpty(Container(9000).ListItem.Property(SubMenu2.Disable))]</selected>
+								<enable>!IsEmpty(Container(9000).ListItem.Property(SubMenu2.Path))</enable>								
+							</control>							
+							<control type="radiobutton" id="9043"> <!-- Enable/Disable Button-->
+								<include>SubMenuCust_Enable</include>
+								<visible>Container(9035).Hasfocus(3)</visible>	
+								<onfocus condition="IsEmpty(Container(9000).ListItem.Property(SubMenu3.Disable))">ClearProperty(Influence.SubMenu3.Disable,Home)</onfocus>
+								<onfocus condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu3.Disable))">SetProperty(Influence.SubMenu3.Disable,True,home)</onfocus>
+								<onclick condition="IsEmpty(Container(9000).ListItem.Property(SubMenu3.Disable))">SetProperty(Influence.SubMenu3.Disable,True,home)</onclick>
+								<onclick condition="IsEmpty(Container(9000).ListItem.Property(SubMenu3.Disable))">Skin.SetString($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu3.Disable],True)</onclick>
+								<onclick condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu3.Disable))">ClearProperty(Influence.SubMenu3.Disable,Home)</onclick>
+								<onclick condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu3.Disable))">Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu3.Disable])</onclick>
+								<selected>[Control.HasFocus(90010) + IsEmpty(Window(home).Property(Influence.SubMenu3.Disable))] | [!Control.HasFocus(90010) + IsEmpty(Container(9000).ListItem.Property(SubMenu3.Disable))]</selected>
+								<enable>!IsEmpty(Container(9000).ListItem.Property(SubMenu3.Path))</enable>									
+							</control>							
+							<control type="radiobutton" id="9044"> <!-- Enable/Disable Button-->
+								<include>SubMenuCust_Enable</include>
+								<visible>Container(9035).Hasfocus(4)</visible>	
+								<onfocus condition="IsEmpty(Container(9000).ListItem.Property(SubMenu4.Disable))">ClearProperty(Influence.SubMenu4.Disable,Home)</onfocus>
+								<onfocus condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu4.Disable))">SetProperty(Influence.SubMenu4.Disable,True,home)</onfocus>
+								<onclick condition="IsEmpty(Container(9000).ListItem.Property(SubMenu4.Disable))">SetProperty(Influence.SubMenu4.Disable,True,home)</onclick>
+								<onclick condition="IsEmpty(Container(9000).ListItem.Property(SubMenu4.Disable))">Skin.SetString($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu4.Disable],True)</onclick>
+								<onclick condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu4.Disable))">ClearProperty(Influence.SubMenu4.Disable,Home)</onclick>
+								<onclick condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu4.Disable))">Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu4.Disable])</onclick>
+								<selected>[Control.HasFocus(90010) + IsEmpty(Window(home).Property(Influence.SubMenu4.Disable))] | [!Control.HasFocus(90010) + IsEmpty(Container(9000).ListItem.Property(SubMenu4.Disable))]</selected>
+								<enable>!IsEmpty(Container(9000).ListItem.Property(SubMenu4.Path))</enable>									
+							</control>							
+							<control type="radiobutton" id="9045"> <!-- Enable/Disable Button-->
+								<include>SubMenuCust_Enable</include>
+								<visible>Container(9035).Hasfocus(5)</visible>	
+								<onfocus condition="IsEmpty(Container(9000).ListItem.Property(SubMenu5.Disable))">ClearProperty(Influence.SubMenu5.Disable,Home)</onfocus>
+								<onfocus condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu5.Disable))">SetProperty(Influence.SubMenu5.Disable,True,home)</onfocus>
+								<onclick condition="IsEmpty(Container(9000).ListItem.Property(SubMenu5.Disable))">SetProperty(Influence.SubMenu5.Disable,True,home)</onclick>
+								<onclick condition="IsEmpty(Container(9000).ListItem.Property(SubMenu5.Disable))">Skin.SetString($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu5.Disable],True)</onclick>
+								<onclick condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu5.Disable))">ClearProperty(Influence.SubMenu5.Disable,Home)</onclick>
+								<onclick condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu5.Disable))">Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu5.Disable])</onclick>
+								<selected>[Control.HasFocus(90010) + IsEmpty(Window(home).Property(Influence.SubMenu5.Disable))] | [!Control.HasFocus(90010) + IsEmpty(Container(9000).ListItem.Property(SubMenu5.Disable))]</selected>
+								<enable>!IsEmpty(Container(9000).ListItem.Property(SubMenu5.Path))</enable>									
+							</control>							
+							<control type="radiobutton" id="9046"> <!-- Enable/Disable Button-->
+								<include>SubMenuCust_Enable</include>
+								<visible>Container(9035).Hasfocus(6)</visible>	
+								<onfocus condition="IsEmpty(Container(9000).ListItem.Property(SubMenu6.Disable))">ClearProperty(Influence.SubMenu6.Disable,Home)</onfocus>
+								<onfocus condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu6.Disable))">SetProperty(Influence.SubMenu6.Disable,True,home)</onfocus>
+								<onclick condition="IsEmpty(Container(9000).ListItem.Property(SubMenu6.Disable))">SetProperty(Influence.SubMenu6.Disable,True,home)</onclick>
+								<onclick condition="IsEmpty(Container(9000).ListItem.Property(SubMenu6.Disable))">Skin.SetString($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu6.Disable],True)</onclick>
+								<onclick condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu6.Disable))">ClearProperty(Influence.SubMenu6.Disable,Home)</onclick>
+								<onclick condition="!IsEmpty(Container(9000).ListItem.Property(SubMenu6.Disable))">Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu6.Disable])</onclick>
+								<selected>[Control.HasFocus(90010) + IsEmpty(Window(home).Property(Influence.SubMenu6.Disable))] | [!Control.HasFocus(90010) + IsEmpty(Container(9000).ListItem.Property(SubMenu6.Disable))]</selected>
+								<enable>!IsEmpty(Container(9000).ListItem.Property(SubMenu6.Path))</enable>									
+							</control>							
+							<control type="button" id="9051"> <!-- Edit Label Button-->
+								<include>SubMenuCust_Label</include>
+								<visible>Container(9035).Hasfocus(1)</visible>	
+								<label2>[COLOR=selected]$INFO[Container(9000).ListItem.Property(SubMenu1.Label)][/COLOR]</label2>
+								<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu1.Label])</onclick>
+							</control>
+							<control type="button" id="9052"> <!-- Edit Label Button-->
+								<include>SubMenuCust_Label</include>
+								<visible>Container(9035).Hasfocus(2)</visible>								
+								<label2>[COLOR=selected]$INFO[Container(9000).ListItem.Property(SubMenu2.Label)][/COLOR]</label2>
+								<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu2.Label])</onclick>
+							</control>
+							<control type="button" id="9053"> <!-- Edit Label Button-->
+								<include>SubMenuCust_Label</include>
+								<visible>Container(9035).Hasfocus(3)</visible>								
+								<label2>[COLOR=selected]$INFO[Container(9000).ListItem.Property(SubMenu3.Label)][/COLOR]</label2>
+								<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu3.Label])</onclick>
+							</control>
+							<control type="button" id="9054"> <!-- Edit Label Button-->
+								<include>SubMenuCust_Label</include>
+								<visible>Container(9035).Hasfocus(4)</visible>								
+								<label2>[COLOR=selected]$INFO[Container(9000).ListItem.Property(SubMenu4.Label)][/COLOR]</label2>
+								<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu4.Label])</onclick>
+							</control>
+							<control type="button" id="9055"> <!-- Edit Label Button-->
+								<include>SubMenuCust_Label</include>
+								<visible>Container(9035).Hasfocus(5)</visible>								
+								<label2>[COLOR=selected]$INFO[Container(9000).ListItem.Property(SubMenu5.Label)][/COLOR]</label2>
+								<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu5.Label])</onclick>
+							</control>
+							<control type="button" id="9056"> <!-- Edit Label Button-->
+								<include>SubMenuCust_Label</include>
+								<visible>Container(9035).Hasfocus(6)</visible>								
+								<label2>[COLOR=selected]$INFO[Container(9000).ListItem.Property(SubMenu6.Label)][/COLOR]</label2>
+								<onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu6.Label])</onclick>
+							</control>
+
+							<control type="button" id="9061"> <!-- Default select action Button-->
+								<include>SubMenuCust_Action</include>						
+								<label2>[COLOR=selected]$INFO[Container(9000).ListItem.Property(SubMenu1.Path)][/COLOR]</label2>
+								<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;custom=True&amp;skinLabel=$INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu1.Label]&amp;skinAction=$INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu1.Path])</onclick>
+								<visible>Container(9035).Hasfocus(1)</visible>
+							</control>
+							<control type="button" id="9062"> <!-- Default select action Button-->
+								<include>SubMenuCust_Action</include>						
+								<label2>[COLOR=selected]$INFO[Container(9000).ListItem.Property(SubMenu2.Path)][/COLOR]</label2>
+								<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;custom=True&amp;skinLabel=$INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu2.Label]&amp;skinAction=$INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu2.Path])</onclick>
+								<visible>Container(9035).Hasfocus(2)</visible>
+							</control>
+							<control type="button" id="9063"> <!-- Default select action Button-->
+								<include>SubMenuCust_Action</include>						
+								<label2>[COLOR=selected]$INFO[Container(9000).ListItem.Property(SubMenu3.Path)][/COLOR]</label2>
+								<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;custom=True&amp;skinLabel=$INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu3.Label]&amp;skinAction=$INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu3.Path])</onclick>
+								<visible>Container(9035).Hasfocus(3)</visible>
+							</control>
+							<control type="button" id="9064"> <!-- Default select action Button-->
+								<include>SubMenuCust_Action</include>						
+								<label2>[COLOR=selected]$INFO[Container(9000).ListItem.Property(SubMenu4.Path)][/COLOR]</label2>
+								<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;custom=True&amp;skinLabel=$INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu4.Label]&amp;skinAction=$INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu4.Path])</onclick>
+								<visible>Container(9035).Hasfocus(4)</visible>
+							</control>
+							<control type="button" id="9065"> <!-- Default select action Button-->
+								<include>SubMenuCust_Action</include>						
+								<label2>[COLOR=selected]$INFO[Container(9000).ListItem.Property(SubMenu5.Path)][/COLOR]</label2>
+								<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;custom=True&amp;skinLabel=$INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu5.Label]&amp;skinAction=$INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu5.Path])</onclick>
+								<visible>Container(9035).Hasfocus(5)</visible>
+							</control>
+							<control type="button" id="9066"> <!-- Default select action Button-->
+								<include>SubMenuCust_Action</include>						
+								<label2>[COLOR=selected]$INFO[Container(9000).ListItem.Property(SubMenu6.Path)][/COLOR]</label2>
+								<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;custom=True&amp;skinLabel=$INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu6.Label]&amp;skinAction=$INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu6.Path])</onclick>
+								<visible>Container(9035).Hasfocus(6)</visible>
+							</control>																					
+							
+							<control type="button" id="9071"> <!-- Reset Button -->
+								<include>SubMenuCust_Reset</include>
+								<visible>Container(9035).Hasfocus(1)</visible>
+								<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu1.Label])</onclick>
+								<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu1.Path])</onclick>					
+							</control>
+							<control type="button" id="9072"> <!-- Reset Button -->
+								<include>SubMenuCust_Reset</include>
+								<visible>Container(9035).Hasfocus(2)</visible>
+								<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu2.Label])</onclick>
+								<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu2.Path])</onclick>					
+							</control>
+							<control type="button" id="9073"> <!-- Reset Button -->
+								<include>SubMenuCust_Reset</include>
+								<visible>Container(9035).Hasfocus(3)</visible>
+								<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu3.Label])</onclick>
+								<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu3.Path])</onclick>					
+							</control>
+							<control type="button" id="9074"> <!-- Reset Button -->
+								<include>SubMenuCust_Reset</include>
+								<visible>Container(9035).Hasfocus(4)</visible>
+								<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu4.Label])</onclick>
+								<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu4.Path])</onclick>					
+							</control>
+							<control type="button" id="9075"> <!-- Reset Button -->
+								<include>SubMenuCust_Reset</include>
+								<visible>Container(9035).Hasfocus(5)</visible>
+								<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu5.Label])</onclick>
+								<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu5.Path])</onclick>					
+							</control>
+							<control type="button" id="9076"> <!-- Reset Button -->
+								<include>SubMenuCust_Reset</include>
+								<visible>Container(9035).Hasfocus(6)</visible>
+								<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu6.Label])</onclick>
+								<onclick>Skin.Reset($INFO[Container(9000).ListItem.Property(Item),,HomeItem.SubMenu6.Path])</onclick>					
+							</control>							
+						</control>	
+					</control>			
+		
+			</control>	
+		</control>
+	</controls>
+</window>

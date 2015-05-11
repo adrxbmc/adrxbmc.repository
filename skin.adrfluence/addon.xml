@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon
+  id="skin.adrfluence"
+  version="2.0.0"
+  name="Adrfluence"
+  provider-name="Ipéfix, Jezz_X, Team Kodi">
+  <requires>
+    <import addon="xbmc.gui" version="5.3.0"/>
+	<import addon="script.skinshortcuts" version="0.4.2"/>
+  </requires>
+  <extension
+    point="xbmc.gui.skin"
+    defaultthemename="textures.xbt"
+    debugging="false"
+    effectslowdown="0.75">
+    <res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Influence skin by Ipefix. (Confluence clone)</summary>
+    <description lang="en">Influence ...</description>
+    <platform>all</platform>
+  </extension>
+</addon>

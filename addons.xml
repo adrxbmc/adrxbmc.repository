@@ -72,6 +72,22 @@
     </extension>
 </addon>
 
+<addon id="plugin.video.adrxbmcfreshstart" name="Fresh Start"
+	version="2.0.0" provider-name="AdrXbmc">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Restauracao de fabrica para o Kodi</summary>
+    <description lang="en">Restauracao de fÃ¡brica para o Kodi ultra facil, basta um simples clique! Esta ferramenta vai trazer o seu Kodi volta ao seu estado original de instalaÃ§Ã£o, apagando todas as personalizaÃ§Ãµes e add-ons que vocÃª pode ter habilitado anteriormente, dando-lhe um novo comeÃ§o!</description>
+    <platform>all</platform>
+    <website>http://adrxbmc.blogspot.pt</website>
+  </extension>
+</addon>
+
 <addon id="plugin.video.adrxbmctv" name="AdrXbmc TV" version="0.1.0" provider-name="AdrXbmc">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

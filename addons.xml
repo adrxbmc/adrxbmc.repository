@@ -119,6 +119,7 @@
 	<import addon="script.module.simplejson"/>
 	<import addon="script.module.requests"/>
 	<import addon="plugin.image.pdfreader"/>
+	<import addon="plugin.program.adrxbmc.notifications"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="resources/lib/main.py">
     <provides>video</provides>

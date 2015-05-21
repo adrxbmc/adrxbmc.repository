@@ -7,7 +7,7 @@
 	<import addon="script.module.simplejson"/>
 	<import addon="script.module.requests"/>
 	<import addon="plugin.image.pdfreader"/> 
-	<import addon="plugin.program.adrxbmc.notifications"/>
+	<import addon="plugin.program.adrxbmc.notifications" version="2.0.0"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="resources/lib/main.py">
     <provides>video</provides>

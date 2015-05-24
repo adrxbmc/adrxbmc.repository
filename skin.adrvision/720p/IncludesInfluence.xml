@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="AutoConfig">
+		<onload>Skin.SetString(T-HomeSubMenu,5FFFFFFF)</onload>
+		<onload>Skin.SetString(T-Recently,5FFFFFFF)</onload>
+		<onload>Skin.SetString(T-OverlayDialog,5FFFFFFF)</onload>
+		<onload>Skin.SetString(T-ContentPanel,DFFFFFFF)</onload>
+		<onload>Skin.SetString(T-Fanart,DFFFFFFF)</onload>
+		<onload>Skin.SetString(T-OSD,18FFFFFF)</onload>
+		<onload>Skin.SetString(T-HomeNowPlayingBack,48FFFFFF)</onload>
+		<onload>Skin.SetString(T-Floor,48FFFFFF)</onload>
+		<onload>Skin.SetString(T-InfoMessagePanel,48FFFFFF)</onload>
+		<onload>Skin.SetString(T-Blade,5FFFFFFF)</onload>
+		<onload>Skin.SetString(T-DialogContext,48FFFFFF)</onload>
+		<onload>Skin.SetString(T-BigButton,48FFFFFF)</onload>
+		<onload>Skin.SetBool(firstrun1.0)</onload>
+	</include>
+	<include name="OldConfig">
+		<onload>Skin.SetString(Custom1HomeItem.Icon,$INFO[Skin.String(CustMenu.1.Icon)])</onload>
+		<onload>Skin.SetString(Custom1HomeItem.Path,$INFO[Skin.String(CustMenu.1.List)])</onload>
+		<onload>Skin.SetString(Custom1HomeItem.Label,$INFO[Skin.String(CustMenu.1.Label)])</onload>		
+
+		<onload>Skin.SetString(Custom2HomeItem.Icon,$INFO[Skin.String(CustMenu.2.Icon)])</onload>
+		<onload>Skin.SetString(Custom2HomeItem.Path,$INFO[Skin.String(CustMenu.2.List)])</onload>
+		<onload>Skin.SetString(Custom2HomeItem.Label,$INFO[Skin.String(CustMenu.2.Label)])</onload>		
+		
+		<onload>Skin.SetString(Custom3HomeItem.Icon,$INFO[Skin.String(CustMenu.3.Icon)])</onload>
+		<onload>Skin.SetString(Custom3HomeItem.Path,$INFO[Skin.String(CustMenu.3.List)])</onload>
+		<onload>Skin.SetString(Custom3HomeItem.Label,$INFO[Skin.String(CustMenu.3.Label)])</onload>		
+		
+		<onload>Skin.SetString(Custom4HomeItem.Icon,$INFO[Skin.String(CustMenu.4.Icon)])</onload>
+		<onload>Skin.SetString(Custom4HomeItem.Path,$INFO[Skin.String(CustMenu.4.List)])</onload>
+		<onload>Skin.SetString(Custom4HomeItem.Label,$INFO[Skin.String(CustMenu.4.Label)])</onload>		
+
+		<onload>Skin.SetString(Custom5HomeItem.Icon,$INFO[Skin.String(CustMenu.5.Icon)])</onload>
+		<onload>Skin.SetString(Custom5HomeItem.Path,$INFO[Skin.String(CustMenu.5.List)])</onload>
+		<onload>Skin.SetString(Custom5HomeItem.Label,$INFO[Skin.String(CustMenu.5.Label)])</onload>		
+		
+
+		<onload>Skin.SetString(Custom1HomeItem.SubMenu1.Label,$INFO[Skin.String(CustMenuSub1.1.Label)])</onload>	
+		<onload>Skin.SetString(Custom1HomeItem.SubMenu1.Path,$INFO[Skin.String(CustMenuSub1.1.List)])</onload>	
+		<onload>Skin.SetString(Custom1HomeItem.SubMenu2.Label,$INFO[Skin.String(CustMenuSub1.2.Label)])</onload>	
+		<onload>Skin.SetString(Custom1HomeItem.SubMenu2.Path,$INFO[Skin.String(CustMenuSub1.2.List)])</onload>	
+		<onload>Skin.SetString(Custom1HomeItem.SubMenu3.Label,$INFO[Skin.String(CustMenuSub1.3.Label)])</onload>	
+		<onload>Skin.SetString(Custom1HomeItem.SubMenu3.Path,$INFO[Skin.String(CustMenuSub1.3.List)])</onload>	
+		<onload>Skin.SetString(Custom1HomeItem.SubMenu4.Label,$INFO[Skin.String(CustMenuSub1.4.Label)])</onload>	
+		<onload>Skin.SetString(Custom1HomeItem.SubMenu4.Path,$INFO[Skin.String(CustMenuSub1.4.List)])</onload>	
+		<onload>Skin.SetString(Custom1HomeItem.SubMenu5.Label,$INFO[Skin.String(CustMenuSub1.5.Label)])</onload>	
+		<onload>Skin.SetString(Custom1HomeItem.SubMenu5.Path,$INFO[Skin.String(CustMenuSub1.5.List)])</onload>	
+		<onload>Skin.SetString(Custom1HomeItem.SubMenu6.Label,$INFO[Skin.String(CustMenuSub1.6.Label)])</onload>	
+		<onload>Skin.SetString(Custom1HomeItem.SubMenu6.Path,$INFO[Skin.String(CustMenuSub1.6.List)])</onload>	
+
+		<onload>Skin.SetString(Custom2HomeItem.SubMenu1.Label,$INFO[Skin.String(CustMenuSub2.1.Label)])</onload>	
+		<onload>Skin.SetString(Custom2HomeItem.SubMenu1.Path,$INFO[Skin.String(CustMenuSub2.1.List)])</onload>	
+		<onload>Skin.SetString(Custom2HomeItem.SubMenu2.Label,$INFO[Skin.String(CustMenuSub2.2.Label)])</onload>	
+		<onload>Skin.SetString(Custom2HomeItem.SubMenu2.Path,$INFO[Skin.String(CustMenuSub2.2.List)])</onload>	
+		<onload>Skin.SetString(Custom2HomeItem.SubMenu3.Label,$INFO[Skin.String(CustMenuSub2.3.Label)])</onload>	
+		<onload>Skin.SetString(Custom2HomeItem.SubMenu3.Path,$INFO[Skin.String(CustMenuSub2.3.List)])</onload>	
+		<onload>Skin.SetString(Custom2HomeItem.SubMenu4.Label,$INFO[Skin.String(CustMenuSub2.4.Label)])</onload>	
+		<onload>Skin.SetString(Custom2HomeItem.SubMenu4.Path,$INFO[Skin.String(CustMenuSub2.4.List)])</onload>	
+		<onload>Skin.SetString(Custom2HomeItem.SubMenu5.Label,$INFO[Skin.String(CustMenuSub2.5.Label)])</onload>	
+		<onload>Skin.SetString(Custom2HomeItem.SubMenu5.Path,$INFO[Skin.String(CustMenuSub2.5.List)])</onload>	
+		<onload>Skin.SetString(Custom2HomeItem.SubMenu6.Label,$INFO[Skin.String(CustMenuSub2.6.Label)])</onload>	
+		<onload>Skin.SetString(Custom2HomeItem.SubMenu6.Path,$INFO[Skin.String(CustMenuSub2.6.List)])</onload>	
+
+		<onload>Skin.SetString(Custom3HomeItem.SubMenu1.Label,$INFO[Skin.String(CustMenuSub3.1.Label)])</onload>	
+		<onload>Skin.SetString(Custom3HomeItem.SubMenu1.Path,$INFO[Skin.String(CustMenuSub3.1.List)])</onload>	
+		<onload>Skin.SetString(Custom3HomeItem.SubMenu2.Label,$INFO[Skin.String(CustMenuSub3.2.Label)])</onload>	
+		<onload>Skin.SetString(Custom3HomeItem.SubMenu2.Path,$INFO[Skin.String(CustMenuSub3.2.List)])</onload>	
+		<onload>Skin.SetString(Custom3HomeItem.SubMenu3.Label,$INFO[Skin.String(CustMenuSub3.3.Label)])</onload>	
+		<onload>Skin.SetString(Custom3HomeItem.SubMenu3.Path,$INFO[Skin.String(CustMenuSub3.3.List)])</onload>	
+		<onload>Skin.SetString(Custom3HomeItem.SubMenu4.Label,$INFO[Skin.String(CustMenuSub3.4.Label)])</onload>	
+		<onload>Skin.SetString(Custom3HomeItem.SubMenu4.Path,$INFO[Skin.String(CustMenuSub3.4.List)])</onload>	
+		<onload>Skin.SetString(Custom3HomeItem.SubMenu5.Label,$INFO[Skin.String(CustMenuSub3.5.Label)])</onload>	
+		<onload>Skin.SetString(Custom3HomeItem.SubMenu5.Path,$INFO[Skin.String(CustMenuSub3.5.List)])</onload>	
+		<onload>Skin.SetString(Custom3HomeItem.SubMenu6.Label,$INFO[Skin.String(CustMenuSub3.6.Label)])</onload>	
+		<onload>Skin.SetString(Custom3HomeItem.SubMenu6.Path,$INFO[Skin.String(CustMenuSub3.6.List)])</onload>	
+
+		<onload>Skin.SetString(Custom4HomeItem.SubMenu1.Label,$INFO[Skin.String(CustMenuSub4.1.Label)])</onload>	
+		<onload>Skin.SetString(Custom4HomeItem.SubMenu1.Path,$INFO[Skin.String(CustMenuSub4.1.List)])</onload>	
+		<onload>Skin.SetString(Custom4HomeItem.SubMenu2.Label,$INFO[Skin.String(CustMenuSub4.2.Label)])</onload>	
+		<onload>Skin.SetString(Custom4HomeItem.SubMenu2.Path,$INFO[Skin.String(CustMenuSub4.2.List)])</onload>	
+		<onload>Skin.SetString(Custom4HomeItem.SubMenu3.Label,$INFO[Skin.String(CustMenuSub4.3.Label)])</onload>	
+		<onload>Skin.SetString(Custom4HomeItem.SubMenu3.Path,$INFO[Skin.String(CustMenuSub4.3.List)])</onload>	
+		<onload>Skin.SetString(Custom4HomeItem.SubMenu4.Label,$INFO[Skin.String(CustMenuSub4.4.Label)])</onload>	
+		<onload>Skin.SetString(Custom4HomeItem.SubMenu4.Path,$INFO[Skin.String(CustMenuSub4.4.List)])</onload>	
+		<onload>Skin.SetString(Custom4HomeItem.SubMenu5.Label,$INFO[Skin.String(CustMenuSub4.5.Label)])</onload>	
+		<onload>Skin.SetString(Custom4HomeItem.SubMenu5.Path,$INFO[Skin.String(CustMenuSub4.5.List)])</onload>	
+		<onload>Skin.SetString(Custom4HomeItem.SubMenu6.Label,$INFO[Skin.String(CustMenuSub4.6.Label)])</onload>	
+		<onload>Skin.SetString(Custom4HomeItem.SubMenu6.Path,$INFO[Skin.String(CustMenuSub4.6.List)])</onload>	
+
+		<onload>Skin.SetString(Custom5HomeItem.SubMenu1.Label,$INFO[Skin.String(CustMenuSub5.1.Label)])</onload>	
+		<onload>Skin.SetString(Custom5HomeItem.SubMenu1.Path,$INFO[Skin.String(CustMenuSub5.1.List)])</onload>	
+		<onload>Skin.SetString(Custom5HomeItem.SubMenu2.Label,$INFO[Skin.String(CustMenuSub5.2.Label)])</onload>	
+		<onload>Skin.SetString(Custom5HomeItem.SubMenu2.Path,$INFO[Skin.String(CustMenuSub5.2.List)])</onload>	
+		<onload>Skin.SetString(Custom5HomeItem.SubMenu3.Label,$INFO[Skin.String(CustMenuSub5.3.Label)])</onload>	
+		<onload>Skin.SetString(Custom5HomeItem.SubMenu3.Path,$INFO[Skin.String(CustMenuSub5.3.List)])</onload>	
+		<onload>Skin.SetString(Custom5HomeItem.SubMenu4.Label,$INFO[Skin.String(CustMenuSub5.4.Label)])</onload>	
+		<onload>Skin.SetString(Custom5HomeItem.SubMenu4.Path,$INFO[Skin.String(CustMenuSub5.4.List)])</onload>	
+		<onload>Skin.SetString(Custom5HomeItem.SubMenu5.Label,$INFO[Skin.String(CustMenuSub5.5.Label)])</onload>	
+		<onload>Skin.SetString(Custom5HomeItem.SubMenu5.Path,$INFO[Skin.String(CustMenuSub5.5.List)])</onload>	
+		<onload>Skin.SetString(Custom5HomeItem.SubMenu6.Label,$INFO[Skin.String(CustMenuSub5.6.Label)])</onload>	
+		<onload>Skin.SetString(Custom5HomeItem.SubMenu6.Path,$INFO[Skin.String(CustMenuSub5.6.List)])</onload>	
+		<onload>Skin.SetBool(OldConfig1.0)</onload>
+	</include>		
+
+</includes>

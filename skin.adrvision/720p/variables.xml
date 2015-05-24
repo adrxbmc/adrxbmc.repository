@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<variable name="HomeSubMenuVideos342">
+		<value condition="Library.HasContent(Movies) + Skin.HasSetting(HomeMenuNoMovieButton)">Ok</value>
+		<value>NOk</value>
+	</variable>
+	<variable name="HomeSubMenuVideos20343">
+		<value condition="Library.HasContent(TVShows) + Skin.HasSetting(HomeMenuNoTVShowButton)">Ok</value>
+		<value>NOk</value>
+	</variable>
+	<variable name="HomeSubMenuVideos20389">
+		<value condition="Library.HasContent(MusicVideos)">Ok</value>
+		<value>NOk</value>
+	</variable>
+	<variable name="HomeSubMenuVideos14022">
+		<value condition="Library.HasContent(Video)">Ok</value>
+		<value>NOk</value>
+	</variable>
+	<variable name="HomeSubMenuMovies20434">
+		<value condition="Library.HasContent(MovieSets)">Ok</value>
+		<value>NOk</value>
+	</variable>
+	<variable name="HomeSubMenuMusic133">
+		<value condition="Library.HasContent(Music)">Ok</value>
+		<value>NOk</value>
+	</variable>
+	<variable name="HomeSubMenuMusic132">
+		<value condition="Library.HasContent(Music)">Ok</value>
+		<value>NOk</value>
+	</variable>
+	<variable name="HomeSubMenuMusic134">
+		<value condition="Library.HasContent(Music)">Ok</value>
+		<value>NOk</value>
+	</variable>
+	<variable name="HomeSubMenuMusic14022">
+		<value condition="Library.HasContent(Music)">Ok</value>
+		<value>NOk</value>
+	</variable>
+	<variable name="HomeSubMenuOpenELEC">
+		<value condition="System.HasAddon(service.openelec.settings)">Ok</value>
+		<value>NOk</value>
+	</variable>	
+	
+	
+	</includes>

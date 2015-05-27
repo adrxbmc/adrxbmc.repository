@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+   <category label="2040">
+      <setting id="entra_canais" type="bool" label="2041" default="false"/>
+      <setting id="max_qual" type="bool" label="2042" default="false"/>
+	  <setting id="pass" type="bool" label="2043" default="false"/>
+	  <setting id="gay" type="bool" label="2058" default="false"/>
+	  <setting id="order" type="text" label="Order" default="rating" visible="False"/>
+	  <setting id="vista" type="enum" label="1005" values="Thumbnails|Poster" default="0"/>
+	  <setting id="nada8" label="2072" type="action" action="RunScript($CWD/resources/lib/viewer.py, import)" />
+   </category>
+   <category label="2000">
+		<setting id="brazzerstv" type="bool" label="Brazzers TV" default="true" visible="true"/>
+		<setting id="brasileirinhas" type="bool" label="Brasileirinhas" default="true" visible="true"/>
+		<setting id="sexyhot" type="bool" label="SexyHot" default="true" visible="true"/>
+		<setting id="pboytv" type="bool" label="Playboy TV" default="true" visible="true"/>
+		<setting id="pboytvchat" type="bool" label="Playboy TV Chat" default="true" visible="true"/>
+		<setting id="penthousehd" type="bool" label="Penthouse TV" default="true" visible="true"/>
+		<setting id="hot" type="bool" label="Hot" default="true" visible="true"/>
+		<setting id="hustlerhd" type="bool" label="Hustler HD" default="true" visible="true"/>
+		<setting id="viki" type="bool" label="Viki Enjoy Premium" default="true" visible="true"/>
+		<setting id="vietsex" type="bool" label="Viet Sex TV" default="true" visible="true"/>
+		<setting id="bella" type="bool" label="Bella Club" default="true" visible="true"/>
+		<setting id="bella2" type="bool" label="Bella Club 2" default="true" visible="true"/>
+		<setting id="butgo" type="bool" label="ButGO" default="true" visible="true"/>
+		<setting id="filthon-adult" type="bool" label="Filthon Adult" default="true" visible="true"/>
+		<setting id="filthon-adult-fetish" type="bool" label="Filthon Adult Fetish" default="true" visible="true"/>
+		<setting id="xxl" type="bool" label="XXL" default="true" visible="true"/>
+		<setting id="frenchlover" type="bool" label="Frenchlover" default="true" visible="true"/>
+		<setting id="dorceltv" type="bool" label="Dorcel TV" default="true" visible="true"/>
+		<setting id="ipure" type="bool" label="iPure TV" default="true" visible="true"/>
+		<setting id="private" type="bool" label="Private" default="true" visible="true"/>
+		<setting id="privategold" type="bool" label="Private Gold" default="true" visible="true"/>
+		<setting id="venus" type="bool" label="Venus" default="true" visible="true"/>
+		<setting id="xdesire" type="bool" label="XDesire" default="true" visible="true"/>
+		<setting id="blue-hustler" type="bool" label="Hustler Blue" default="true" visible="false"/>
+		<setting id="olala" type="bool" label="O-la-la" default="true" visible="true"/>
+		<setting id="eroxxx" type="bool" label="Ero XXX" default="true" visible="true"/>
+		<setting id="amateritv" type="bool" label="Amateri TV" default="true" visible="true"/>
+		<setting id="russian-nights" type="bool" label="Russian Nights" default="true" visible="true"/>
+		<setting id="hustlertv" type="bool" label="Hustler TV" default="true" visible="true"/>
+		<setting id="sexzonehd" type="bool" label="Sexzone HD" default="true" visible="true"/>
+		<setting id="redlighthd" type="bool" label="Redlight HD" default="true" visible="true"/>
+		<setting id="hallotv" type="bool" label="Hallo TV" default="true" visible="true"/>
+		<setting id="platinumtv" type="bool" label="Platinum TV" default="true" visible="true"/>
+		<setting id="sexprive" type="bool" label="Sexprive Brasileirinhas" default="true" visible="true"/>
+		<setting id="nightclub" type="bool" label="Nightclub TV" default="true" visible="true"/>
+		<setting id="temptation" type="bool" label="Temptation TV" default="true" visible="true"/>
+		<setting id="sct" type="bool" label="SCT" default="true" visible="true"/>
+		<setting id="redlight_premium" type="bool" label="Redlight Premium" default="true" visible="true"/>
+		<setting id="bbtv" type="bool" label="Bluebird TV" default="true" visible="true"/>
+		<setting id="star" type="bool" label="Star 18+" default="true" visible="true"/>
+		<setting id="hotc" type="bool" label="Hot (China)" default="true" visible="true"/>
+		<setting id="paparazzo" type="bool" label="Paparazzo TV" default="true" visible="false"/>
+		<setting id="erox" type="bool" label="Erox HD" default="true" visible="false"/>
+		<setting id="dusk" type="bool" label="Dusk TV" default="true" visible="false"/>
+		<setting id="xxx1" type="bool" label="XXX1" default="true" visible="true"/>
+		<setting id="xxx2" type="bool" label="XXX2" default="true" visible="true"/>
+		<setting id="bungabunga" type="bool" label="Bunga Bunga" default="true" visible="true"/>
+		<setting id="sathd" type="bool" label="Satisfaction HD" default="true" visible="true"/>
+		<setting id="centox" type="bool" label="CentoXCento" default="true" visible="true"/>
+		<setting id="exoticatv" type="bool" label="Exotica TV" default="true" visible="true"/>
+		<setting id="pinkotv" type="bool" label="Pink O TV" default="true" visible="true"/>
+		<setting type="sep"/>
+		<setting id="filthon-gay" type="bool" label="Filthon Gay" default="true" visible="true"/>
+		<setting id="gboys" type="bool" label="G-Boys TV" default="true" visible="false"/>
+   </category>
+   <category label="Download">
+		<setting id="download-folder" type="folder" label="2044" default=""/>
+   </category>
+   <category label="Info">
+		<setting id="nada3" label="$ADDON[plugin.video.adultstv 1000] $INFO[System.AddonVersion(plugin.video.adultstv)]" type="action" action="RunScript($CWD/resources/lib/viewer.py, version)"/>
+		<setting id="nada4" label="XBMC Tools $ADDON[plugin.video.adultstv 1001]" type="action" action="RunScript($CWD/resources/lib/viewer.py, xbmctools)" visible="System.HasAddon(plugin.video.xbmctools)"/>
+		<setting id="nada5" label="XBMC Tools $ADDON[plugin.video.adultstv 1002]" type="action" action="RunScript($CWD/resources/lib/viewer.py, xbmctools)" visible="!System.HasAddon(plugin.video.xbmctools)"/>
+		<setting id="nada" label="Changelog" type="action" action="RunScript($CWD/resources/lib/viewer.py, changelog)" />
+		<setting id="nada2" label="1004" type="action" action="RunScript($CWD/resources/lib/viewer.py, license)" />
+		<setting label="$LOCALIZE[24052]" type="lsep"/>
+		<setting id="nada6" label="1003" type="action" action="RunScript($CWD/resources/lib/viewer.py, disclaimer)" />
+		<setting id="nada7" label="2067" type="action" action="RunScript($CWD/resources/lib/viewer.py, help)" />
+   </category>
+</settings>

@@ -176,7 +176,7 @@
 
 <addon
   id="skin.adrvision"
-  version="2.0.2"
+  version="2.0.3"
   name="AdrVision"
   provider-name="AdrXbmc">
   <requires>

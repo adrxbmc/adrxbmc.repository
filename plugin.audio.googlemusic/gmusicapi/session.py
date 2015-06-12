@@ -3,17 +3,19 @@
 """
 Sessions handle the details of authentication and transporting requests.
 """
-from contextlib import closing
-import cookielib
+#from contextlib import closing
+#import cookielib
 
-
+import gpsoauth
+#import oauth2client
+#import httplib2  # included with oauth2client
 import requests
 
 from gmusicapi.exceptions import (
     AlreadyLoggedIn, NotLoggedIn, CallFailure
 )
-from gmusicapi.protocol.shared import ClientLogin
-from gmusicapi.protocol import webclient
+#from gmusicapi.protocol.shared import ClientLogin
+#from gmusicapi.protocol import webclient
 from gmusicapi.utils import utils
 
 log = utils.DynamicClientLogger(__name__)
@@ -28,7 +30,7 @@ class _Base(object):
         self._rsession = requests.Session()
 
         if rsession_setup is None:
-            rsession_setup = lambda x: x
+            rsession_setup = lambda x: x  # noqa
         self._rsession_setup = rsession_setup
         self._rsession_setup(self._rsession)
 
@@ -125,9 +127,6 @@ class Webclient(_Base):
 
         return self.is_authenticated
 
-    def getCookies(self):
-        webclient.Init.perform(self, False)
-        
     def _send_with_auth(self, req_kwargs, desired_auth, rsession):
         if desired_auth.sso:
             req_kwargs.setdefault('headers', {})
@@ -141,16 +140,84 @@ class Webclient(_Base):
 
             req_kwargs['params'].update({'u': 0, 'xt': rsession.cookies['xt']})
 
-        return rsession.request(timeout=10,**req_kwargs)
+        return rsession.request(**req_kwargs)
 
 
-class Mobileclient(Webclient):
+class Mobileclient(_Base):
+    def __init__(self, *args, **kwargs):
+        super(Mobileclient, self).__init__(*args, **kwargs)
+        self._master_token = None
+        self._authtoken = None
+
     def login(self, email, password, *args, **kwargs):
-        success = super(Mobileclient, self).login(email, password, *args, **kwargs)
+        """
+        Get a master token, then use it to get a skyjam OAuth token.
 
-        # Remove any webclient-specific cookies.
-        # As of Feb 2014, sending these will cause a 403 when
-        #  getting the stream url of an AA song.
-        self._rsession.cookies = cookielib.CookieJar()
+        :param email:
+        :param password:
+        """
 
-        return success
+        super(Mobileclient, self).login(email, password, *args, **kwargs)
+
+        res = gpsoauth.perform_master_login(email, password)
+        if 'Token' not in res:
+            return False
+        self._master_token = res['Token']
+
+        res = gpsoauth.perform_oauth(
+            email, self._master_token,
+            service='sj', app='com.google.android.music',
+            client_sig='38918a453d07199354f8b19af05ec6562ced5788')
+        if 'Auth' not in res:
+            return False
+        self._authtoken = res['Auth']
+
+        self.is_authenticated = True
+
+        return True
+
+    def _send_with_auth(self, req_kwargs, desired_auth, rsession):
+        if desired_auth.oauth:
+            req_kwargs.setdefault('headers', {})
+
+            # does this expire?
+            req_kwargs['headers']['Authorization'] = \
+                'GoogleLogin auth=' + self._authtoken
+
+        return rsession.request(**req_kwargs)
+
+
+class Musicmanager(_Base):
+    def __init__(self, *args, **kwargs):
+        super(Musicmanager, self).__init__(*args, **kwargs)
+        self._oauth_creds = None
+
+    def login(self, oauth_credentials, *args, **kwargs):
+        """Store an already-acquired oauth2client.Credentials."""
+        super(Musicmanager, self).login()
+
+        try:
+            # refresh the token right away to check auth validity
+            oauth_credentials.refresh(httplib2.Http())
+        except oauth2client.client.Error:
+            log.exception("error when refreshing oauth credentials")
+
+        if oauth_credentials.access_token_expired:
+            log.info("could not refresh oauth credentials")
+            return False
+
+        self._oauth_creds = oauth_credentials
+        self.is_authenticated = True
+
+        return self.is_authenticated
+
+    def _send_with_auth(self, req_kwargs, desired_auth, rsession):
+        if desired_auth.oauth:
+            if self._oauth_creds.access_token_expired:
+                self._oauth_creds.refresh(httplib2.Http())
+
+            req_kwargs['headers'] = req_kwargs.get('headers', {})
+            req_kwargs['headers']['Authorization'] = \
+                'Bearer ' + self._oauth_creds.access_token
+
+        return rsession.request(**req_kwargs)

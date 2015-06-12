@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.audio.googlemusic"
        name="Google Music"
-       version="1.0"
+       version="2.0.0"
        provider-name="AdrXbmc">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="xbmc.addon" version="12.0.0"/>
-    <import addon="script.module.parsedom" version="2.5.1"/>
+    <import addon="plugin.video.youtube" version="5.1.1" optional="true"/>
     <import addon="script.module.decorator" version="3.4.0"/>
     <import addon="script.module.requests" version="1.1.0"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>audio</provides>
+    <provides>audio</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <summary lang="en">Experimental Google Music audio plugin</summary>
-    <description lang="en">Plugin that lets you play music from your Google Music account.</description>
+    <summary lang="en">Experimental Google Play Music audio plugin</summary>
+    <description lang="en">Plugin that lets you play music from Google Play Music.</description>
+	<summary lang="pt">Audio experimental para o Google Play Music</summary>
+    <description lang="pt">Add-on que permite aceder à tua conta Google Play Music.</description>
   </extension>
 </addon>

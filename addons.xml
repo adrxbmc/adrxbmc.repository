@@ -111,6 +111,20 @@
     </extension>
 </addon>
 
+<addon id="plugin.video.adrxbmccustombuildswizard" name="AdrXbmc Custom Wizard" version="2.0.0" provider-name="AdrXbmc">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">AdrXbmc Custom Builds Wizard</summary>
+    <description lang="en">Easy Install With AdrXbmc Custom Builds Wizard</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.adrxbmcfreshstart" name="Fresh Start"
 	version="2.0.0" provider-name="AdrXbmc">
   <requires>
